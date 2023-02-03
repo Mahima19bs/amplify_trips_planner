@@ -1,0 +1,11 @@
+input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+type Trip @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  tripName: String!
+  destination: String!
+  startDate: AWSDate!
+  endDate: AWSDate!
+  tripImageUrl: String
+  tripImageKey: String
+}
